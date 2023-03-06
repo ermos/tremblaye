@@ -1,12 +1,14 @@
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap');
 
 @import "modules/reset";
+@import "modules/typo";
 
 :root {
-  --main-color-dark: 0, 0, 0;
-  --main-color: 52,53,65;
-  --main-color-light: 64,65,79;
-  --sub-color: 255, 255, 255;
+  --neutral-color: 0, 185, 242;
+  --sub-color-dark: 0, 0, 0;
+  --sub-color: 52,53,65;
+  --sub-color-light: 64,65,79;
+  --main-color: 255, 255, 255;
   --scrollbar-width: 10px;
   --radius-little: 5px;
   --radius-medium: 10px;
@@ -14,7 +16,7 @@
   --spacing-little: 10px;
   --spacing-medium: 20px;
   --spacing-large: 30px;
-  --conversation-size: 750px;
+  --interface-size: 1200px;
 }
 
 body {
@@ -24,7 +26,7 @@ body {
 
 body, input {
   font-family:
-          "Open Sans",
+          "Inter",
           -apple-system,
           BlinkMacSystemFont,
           "Segoe UI",
