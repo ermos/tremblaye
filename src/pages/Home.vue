@@ -40,6 +40,17 @@
         </div>
       </div>
     </div>
+    <section class="landing-family">
+      <div class="landing-family__content typo">
+        <h2 class="title">Family First...</h2>
+        <p>
+          The Tremblaye Group is a family business founded in 1960.
+          It is currently managed by Hervé TREMBLAYE.
+          It operates in many areas of activity and has two divisions.
+        </p>
+      </div>
+      <img class="landing-family__image" src="/static/family.png" />
+    </section>
   </div>
 </template>
 
@@ -59,6 +70,7 @@
 
   &__wrapper {
     position: relative;
+    margin-bottom: calc(80px + var(--spacing-medium));
   }
 
   &__content {
@@ -111,24 +123,54 @@
     padding: var(--spacing-little);
     display: flex;
     align-items: center;
-  }
+    user-select: none;
+    transition: all ease-in-out 200ms;
 
-  &__card-image {
-    padding: var(--spacing-medium);
-    background-color: rgb(var(--neutral-color));
-    margin: var(--spacing-little);
+    &:hover {
+      background-color: rgb(var(--neutral-color));
+      transform: translateY(-10px);
+    }
 
-    img {
-      height: 80px;
+    &-image {
+      padding: var(--spacing-medium);
+      background-color: rgb(var(--neutral-color));
+      margin: var(--spacing-little);
+
+      img {
+        height: 80px;
+      }
+    }
+
+    &-text {
+      margin: var(--spacing-little);
+      color: rgb(var(--sub-color-dark));
+      font-size: 2.5rem;
+      line-height: 1.5;
+      font-weight: 700;
+    }
+
+    &:hover &-text {
+      color: rgb(var(--main-color));
     }
   }
+}
 
-  &__card-text {
+.landing-family {
+  max-width: var(--interface-size);
+  margin: auto;
+  padding: var(--spacing-large) var(--spacing-little);
+  display: flex;
+  justify-content: space-between;
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  &__image {
     margin: var(--spacing-little);
-    color: rgb(var(--sub-color-dark));
-    font-size: 2.5rem;
-    line-height: 1.5;
-    font-weight: 700;
+    height: 300px;
   }
 }
 </style>

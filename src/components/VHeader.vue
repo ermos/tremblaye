@@ -17,7 +17,7 @@ import VButton from "./VButton.vue";
         <router-link to="/">Logistique</router-link>
         <router-link to="/">Emballage</router-link>
       </nav>
-      <v-button>Espace client</v-button>
+      <v-button>Contact us</v-button>
     </div>
   </header>
 </template>
@@ -32,6 +32,7 @@ import VButton from "./VButton.vue";
   width: 100%;
   border-bottom: 1px solid rgba(var(--main-color), 0.1);
   color: rgb(var(--main-color));
+  max-height: var(--header-size);
 
   &__content {
     width: 100%;
