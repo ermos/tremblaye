@@ -14,9 +14,30 @@
         </video>
       </div>
       <div class="landing-banner__cards">
-        <div class="landing-banner__card"></div>
-        <div class="landing-banner__card"></div>
-        <div class="landing-banner__card"></div>
+        <div class="landing-banner__card">
+          <div class="landing-banner__card-image">
+            <img src="/static/transport.svg" />
+          </div>
+          <span class="landing-banner__card-text">
+            Transport<br>Service
+          </span>
+        </div>
+        <div class="landing-banner__card">
+          <div class="landing-banner__card-image">
+            <img src="/static/logistics.svg" />
+          </div>
+          <span class="landing-banner__card-text">
+            Logicstics<br>Service
+          </span>
+        </div>
+        <div class="landing-banner__card">
+          <div class="landing-banner__card-image">
+            <img src="/static/packaging.svg" />
+          </div>
+          <span class="landing-banner__card-text">
+            Packaging<br>Service
+          </span>
+        </div>
       </div>
     </div>
   </div>
@@ -73,7 +94,7 @@
   &__cards {
     position: absolute;
     z-index: 2;
-    bottom: calc(-100px - var(--spacing-medium));
+    bottom: calc(-80px - var(--spacing-medium));
     width: 100%;
     max-width: var(--interface-size);
     left: 50%;
@@ -83,10 +104,31 @@
 
   &__card {
     flex: 1;
-    height: 200px;
+    height: 160px;
     background-color: rgb(var(--main-color));
     box-shadow: 0 0 20px rgba(var(--sub-color), 0.3);
     margin: var(--spacing-medium);
+    padding: var(--spacing-little);
+    display: flex;
+    align-items: center;
+  }
+
+  &__card-image {
+    padding: var(--spacing-medium);
+    background-color: rgb(var(--neutral-color));
+    margin: var(--spacing-little);
+
+    img {
+      height: 80px;
+    }
+  }
+
+  &__card-text {
+    margin: var(--spacing-little);
+    color: rgb(var(--sub-color-dark));
+    font-size: 2.5rem;
+    line-height: 1.5;
+    font-weight: 700;
   }
 }
 </style>
