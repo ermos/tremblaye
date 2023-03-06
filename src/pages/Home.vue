@@ -1,8 +1,9 @@
 <script setup>
+
 </script>
 
 <template>
-  Hey
+
 </template>
 
 <style lang="scss">
