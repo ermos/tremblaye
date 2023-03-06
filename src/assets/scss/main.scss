@@ -9,6 +9,7 @@
   --sub-color: 52,53,65;
   --sub-color-light: 64,65,79;
   --main-color: 255, 255, 255;
+  --main-color-dark-1: 200, 200, 200;
   --scrollbar-width: 10px;
   --radius-little: 5px;
   --radius-medium: 10px;
@@ -43,7 +44,7 @@ body, input {
 /* Firefox */
 * {
   scrollbar-width: auto;
-  scrollbar-color: rgba(var(--sub-color), 0.3) rgb(var(--main-color));
+  scrollbar-color: rgb(var(--neutral-color)) rgb(var(--main-color));
 }
 
 /* Chrome, Edge, and Safari */
@@ -57,10 +58,7 @@ body, input {
 }
 
 *::-webkit-scrollbar-thumb {
-  background-color: rgba(var(--sub-color), 0.3);
-  border-radius: 4px;
-  border-left: 2px solid rgb(var(--main-color));
-  border-right: 2px solid rgb(var(--main-color));
+  background-color: rgb(var(--neutral-color));
 }
 
 ::-moz-selection {
