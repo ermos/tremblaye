@@ -1,10 +1,22 @@
 <script setup>
 
 import VButton from "./VButton.vue";
+import {onBeforeUnmount, onMounted, reactive} from "vue";
+
+const data = reactive({
+  isActive: false
+})
+
+onMounted(() => document.addEventListener("scroll", handleScroll, true));
+onBeforeUnmount(() => document.removeEventListener("scroll", handleScroll, true));
+
+function handleScroll() {
+  data.isActive = window.scrollY >= 30;
+}
 </script>
 
 <template>
-  <header class="header">
+  <header class="header" :class="{ 'active': data.isActive }">
     <div class="header__content">
       <div class="header__logo">
         <img src="/static/logo.png" alt="Logo de Tremblaye" />
@@ -33,6 +45,13 @@ import VButton from "./VButton.vue";
   border-bottom: 1px solid rgba(var(--main-color), 0.1);
   color: rgb(var(--main-color));
   max-height: var(--header-size);
+  transition: ease-in-out all 200ms;
+
+  &.active {
+    color: rgb(var(--sub-color));
+    background-color: rgb(var(--main-color));
+    box-shadow: 0 0 20px rgba(var(--sub-color), 0.3);
+  }
 
   &__content {
     width: 100%;
