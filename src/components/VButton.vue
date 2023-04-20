@@ -15,5 +15,9 @@
   padding: 15px 30px;
   margin: var(--spacing-little);
   cursor: pointer;
+
+  &.full {
+    width: 100%;
+  }
 }
 </style>

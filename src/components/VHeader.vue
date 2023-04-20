@@ -51,21 +51,22 @@ function closeNav(event) {
   <header class="header" :class="{ 'active': data.isActive }">
     <div class="header__content">
       <MenuIcon class="header__nav-icon" v-if="data.isMobileMenu" @click="openNav"/>
-      <div class="header__logo">
+      <router-link class="header__logo" to="/">
         <img src="/static/logo.png" alt="Logo de Tremblaye" />
         Tremblaye.
-      </div>
+      </router-link>
       <nav ref="nav" class="header__nav" :class="{ 'header__nav--mobile': data.isMobileMenu, 'show': data.isMobileOpen }">
-        <router-link to="/">La société</router-link>
-        <router-link to="/">Transport</router-link>
-        <router-link to="/">Location</router-link>
-        <router-link to="/">Logistique</router-link>
-        <router-link to="/">Emballage</router-link>
+        <router-link class="link" to="/">Company</router-link>
+        <router-link class="link" :to="{ name: 'ourValues' }">Our Values</router-link>
+        <router-link class="link" to="/">Transport</router-link>
+        <router-link class="link" to="/">Rental</router-link>
+        <router-link class="link" to="/">Logistic</router-link>
+        <router-link class="link" to="/">Packaging</router-link>
         <div v-if="data.isMobileMenu" class="header__nav-footer">
-          <v-button>Contact us</v-button>
+          <router-link :to="{ name: 'joinUs' }"><v-button>Join us</v-button></router-link>
         </div>
       </nav>
-      <v-button v-if="!data.isMobileMenu">Contact us</v-button>
+      <router-link :to="{ name: 'joinUs' }"><v-button v-if="!data.isMobileMenu">Join us</v-button></router-link>
     </div>
   </header>
 </template>
@@ -105,6 +106,8 @@ function closeNav(event) {
     font-size: 2rem;
     font-weight: 700;
     padding: var(--spacing-little);
+    text-decoration: none;
+    color: inherit;
 
     img {
       height: 30px;
@@ -155,7 +158,7 @@ function closeNav(event) {
         animation: ease-in-out mobile-menu-slide-in 300ms;
       }
 
-      a {
+      .link {
         padding: var(--spacing-medium);
         margin: var(--spacing-little);
         transition: ease-in-out all 200ms;
@@ -168,6 +171,10 @@ function closeNav(event) {
 
       .header__nav-footer {
         margin-top: auto;
+
+        a {
+          display: block;
+        }
 
         button {
           width: calc(100% - var(--spacing-medium));
